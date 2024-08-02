@@ -157,10 +157,12 @@ input_year):
         # grouping data for plotting.
 	# Hint:Use the columns Month and Automobile_Sales.
         mas=data.groupby('Month')['Automobile_Sales'].sum().reset_index()
-        Y_chart2 = dcc.Graph(figure=px.line(mas,
-            x='Month',
-            y='Automobile_Sales',
-            title='Total Monthly Automobile Sales'))
+        #Y_chart2 = dcc.Graph(figure=px.line(mas,
+         #   x='Month',
+          #  y='Automobile_Sales',
+           # title='Total Monthly Automobile Sales'))
+	Y_chart2 = dcc.Graph(figure=px.line(yearly_data,x='Month',
+                      y='Automobile_Sales',title="Monthly Automobile Sales for the year {}".format(input_year)))
 
   # Plot bar chart for average number of vehicles sold during the given year
          # grouping data for plotting.
